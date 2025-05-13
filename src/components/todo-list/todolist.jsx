@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { deleteTodoItem, editTodoItem } from  '../redux/todoListReducer';
+import { deleteTodoItem, editTodoItem } from  '../../features/todo-list/todoListReducer';
 
 import { useState } from "react";
 

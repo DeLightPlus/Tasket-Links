@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { useState } from "react";
-import { addTodoItem } from "../redux/todoListReducer";
+import { addTodoItem } from '../../features/todo-list/todoListReducer';
+
 
 function AddTodoItem() {
   const [item, setItem] = useState("");

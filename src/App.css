@@ -1,30 +1,61 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General Layout */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f7fafc; /* Light gray background */
+  color: #2d3748; /* Dark gray text */
+  line-height: 1.6;
+  margin: 0;
+}
+
+a {
+  color: #3182ce; /* Blue */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #2b6cb0; /* Darker blue */
+}
+
+button {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2b6cb0; /* Darker blue */
+  color: white;
+}
+
+button:focus {
+  outline: 2px solid #3182ce;
+  outline-offset: 2px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
 #root {
   max-width: 1280px;
   margin: 0;
   padding: 0;
   text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -39,4 +70,54 @@
 
 .read-the-docs {
   color: #888;
+}
+
+
+
+/* Forms */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.5em;
+  border: 1px solid #cbd5e0; /* Light gray border */
+  border-radius: 0.375rem;
+  width: 100%;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: 2px solid #3182ce; /* Blue focus */
+  outline-offset: 2px;
+}
+
+/* Utility Classes */
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  background-color: #1a202c;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: auto;
 }
