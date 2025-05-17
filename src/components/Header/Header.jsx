@@ -49,10 +49,44 @@ const Header = () => {
         </div>
         <nav className="nav">
           <ul className="flex gap-4 items-center">
-            <li>
-              <a href="/" onClick={handleLogoClick}>
-                Create
-              </a>
+            <li className="relative group">
+              <button className="flex items-center gap-2 px-4 py-2 rounded hover:bg-gray-700 focus:outline-none" type="button">
+                <span className="font-semibold">Create</span>
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+              </button>
+
+              <div className="absolute top-8 left-0 mt-2 w-64 bg-white text-gray-900 rounded shadow-lg z-50 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-200">
+                <ul className='flex-col'>
+                  <li className="flex items-start gap-3 p-2 hover:bg-gray-100 cursor-pointer" onClick={() => navigate('/dashboard?type=task')}>
+                    <span className="mt-1"><svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 12l2 2 4-4"/></svg></span>
+                    <div>
+                      <div className="font-medium">Task</div>
+                      <div className="text-xs text-gray-500">Create and manage your tasks efficiently.</div>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3 p-2 hover:bg-gray-100 cursor-pointer" onClick={() => navigate('/dashboard?type=shopping')}>
+                    <span className="mt-1"><svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
+                    <div>
+                      <div className="font-medium">Shopping</div>
+                      <div className="text-xs text-gray-500">Create and organize shopping lists.</div>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3 p-2 hover:bg-gray-100 cursor-pointer" onClick={() => navigate('/dashboard?type=bookmark')}>
+                    <span className="mt-1"><svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></span>
+                    <div>
+                      <div className="font-medium">Bookmark</div>
+                      <div className="text-xs text-gray-500">Save and organize your favorite links.</div>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3 p-2 hover:bg-gray-100 cursor-pointer" onClick={() => navigate('/dashboard?type=recipe')}>
+                    <span className="mt-1"><svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M4 21V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14"/><path d="M16 3v4"/><path d="M8 3v4"/><path d="M4 11h16"/></svg></span>
+                    <div>
+                      <div className="font-medium">Recipe</div>
+                      <div className="text-xs text-gray-500">Collect and manage your recipes.</div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </li>
             <li>
               <a href="/about">About</a>
