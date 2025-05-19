@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import './App.css';
 
 import Header from './components/Header/Header';
@@ -12,6 +13,7 @@ import Signup from './components/auth/Signup';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 
 const App = () => {
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   return (
     <Router>
       <div className="flex flex-col w-screen">
@@ -19,8 +21,8 @@ const App = () => {
         <main className="container">
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
+            <Route path="/login" element={isAuthenticated ? <Navigate to="/dashboard" /> : <Login />} />
+            <Route path="/signup" element={isAuthenticated ? <Navigate to="/dashboard" /> : <Signup />} />
             <Route
               path="/dashboard"
               element={
